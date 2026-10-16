@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
 <title>IA Academy: guia do curso de influenciador virtual com IA</title>
 <meta name="description" content="Veja o que está incluso na IA Academy, curso online sobre criação de vídeos com IA sem aparecer. Página informativa de afiliado.">
 <meta name="theme-color" content="#5b2eff">
 <script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -23,6 +24,7 @@
   --sun-deep:#c9921a;
   --mint:#2bd9a8;
   --rose:#ff5f8d;
+  --neon:#bbf900;
   --muted:#5c5778;
   --line:#d9d3f6;
 }
@@ -45,7 +47,6 @@ img{max-width:100%}
 a:focus-visible,summary:focus-visible,.btn:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
 .on-dark a:focus-visible,.on-dark .btn:focus-visible{outline-color:#fff}
 
-/* Aviso do topo */
 .notice{
   background:var(--ink);
   color:#d9d3f6;
@@ -54,7 +55,6 @@ a:focus-visible,summary:focus-visible,.btn:focus-visible{outline:3px solid var(-
   padding:9px 16px;
 }
 
-/* Botão */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -72,7 +72,6 @@ a:focus-visible,summary:focus-visible,.btn:focus-visible{outline:3px solid var(-
 .btn:hover{transform:translateY(3px);box-shadow:0 3px 0 var(--sun-deep)}
 .btn:active{transform:translateY(6px);box-shadow:0 0 0 var(--sun-deep)}
 
-/* Hero */
 .hero{
   background:var(--violet);
   color:#fff;
@@ -109,69 +108,6 @@ a:focus-visible,summary:focus-visible,.btn:focus-visible{outline:3px solid var(-
   max-width:52ch;
 }
 
-/* Quadros verticais do hero com fotos realistas */
-.strip{
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
-  gap:14px;
-  transform:rotate(-5deg);
-}
-.frame{
-  position:relative;
-  width:min(28vw,150px);
-  aspect-ratio:9/16;
-  border-radius:22px;
-  overflow:hidden;
-  border:3px solid var(--ink);
-  box-shadow:0 14px 0 rgba(21,16,48,.25);
-  animation:rise .7s cubic-bezier(.2,.8,.2,1) both;
-  background:#1e1845;
-}
-.frame.f2{margin-top:36px;animation-delay:.12s}
-.frame.f3{animation-delay:.24s}
-
-.frame img.frame-bg{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  transition:transform .3s ease;
-}
-.frame:hover img.frame-bg{
-  transform:scale(1.05);
-}
-.frame .overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(180deg, rgba(21,16,48,0.2) 0%, rgba(21,16,48,0.7) 100%);
-  z-index:1;
-}
-.frame .rec{
-  position:absolute;top:12px;right:12px;
-  width:10px;height:10px;border-radius:50%;
-  background:#ff3b5c;
-  box-shadow:0 0 8px rgba(255,59,92,0.8);
-  z-index:2;
-}
-.frame .tag{
-  position:absolute;left:10px;bottom:10px;
-  background:rgba(21,16,48,0.85);
-  backdrop-filter:blur(6px);
-  color:#fff;
-  font-size:11px;font-weight:700;line-height:1;
-  padding:6px 10px;border-radius:999px;
-  border:1px solid rgba(255,255,255,0.2);
-  z-index:2;
-}
-@keyframes rise{
-  from{transform:translateY(46px);opacity:0}
-  to{transform:none;opacity:1}
-}
-
-/* Vídeo de apresentação */
 .vsl{justify-self:center;width:min(78vw,300px)}
 .vsl .screen{
   position:relative;
@@ -185,7 +121,6 @@ a:focus-visible,summary:focus-visible,.btn:focus-visible{outline:3px solid var(-
 .vsl video{display:block;width:100%;height:100%;object-fit:cover;background:#000}
 .vsl figcaption{margin-top:24px;font-size:13px;line-height:1.5;color:#d9d0ff}
 
-/* Seções */
 section{padding:76px 0}
 .section-title{
   font-size:clamp(28px,4vw,42px);
@@ -195,7 +130,6 @@ section{padding:76px 0}
 }
 .section-sub{color:var(--muted);max-width:60ch;margin-bottom:38px}
 
-/* O que é */
 .about p{max-width:62ch;margin-bottom:14px;color:var(--ink)}
 .facts{
   display:grid;
@@ -207,7 +141,6 @@ section{padding:76px 0}
 .facts h3{font-size:21px;margin-bottom:8px}
 .facts p{font-size:15px;color:var(--muted);margin:0}
 
-/* O que você aprende */
 .learn{background:var(--white)}
 .learn-list{
   list-style:none;
@@ -222,73 +155,66 @@ section{padding:76px 0}
 .learn-list strong{display:block;font-size:18px;margin-bottom:4px}
 .learn-list span{color:var(--muted);font-size:15px}
 
-/* Formatos & Carrossel */
+/* SEÇÃO FORMATOS */
 .formats{background:var(--ink);color:#fff}
 .formats .section-sub{color:#c9c2ea}
 .reel{
   display:flex;
   gap:16px;
   overflow-x:auto;
-  padding:10px 20px 26px;
+  padding:6px 20px 24px;
   margin:0 -20px;
   scroll-snap-type:x proximity;
   -webkit-overflow-scrolling:touch;
 }
-.reel::-webkit-scrollbar{height:6px}
-.reel::-webkit-scrollbar-track{background:rgba(255,255,255,0.05);border-radius:10px}
-.reel::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.2);border-radius:10px}
+.reel::-webkit-scrollbar{height:8px}
+.reel::-webkit-scrollbar-track{background:rgba(255,255,255,.05);border-radius:4px}
+.reel::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2);border-radius:4px}
 
 .tile{
   position:relative;
-  flex:0 0 190px;
+  flex:0 0 170px;
   aspect-ratio:9/16;
-  border-radius:24px;
+  border-radius:18px;
+  border:2.5px solid rgba(255,255,255,.9);
   scroll-snap-align:start;
   overflow:hidden;
-  background:#130e2b;
-  box-shadow:0 12px 28px rgba(0,0,0,0.45);
-  transition:transform .22s ease, box-shadow .22s ease;
+  background:#1f1938;
+  box-shadow:0 10px 25px rgba(0,0,0,.4);
+  transition:transform .2s ease;
 }
 .tile:hover{
-  transform:translateY(-5px) scale(1.02);
-  box-shadow:0 18px 36px rgba(0,0,0,0.6);
+  transform:translateY(-4px);
 }
-.tile img.tile-bg{
-  position:absolute;
-  inset:0;
+.tile img{
   width:100%;
   height:100%;
   object-fit:cover;
   display:block;
-  transition:transform .35s ease;
+  background:#1a1433;
 }
-.tile:hover img.tile-bg{
-  transform:scale(1.06);
-}
-.tile .tile-overlay{
+.tile::after{
+  content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.3) 72%, rgba(0,0,0,0.85) 100%);
-  z-index:1;
+  background:linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.3) 30%, transparent 60%);
   pointer-events:none;
 }
 .tile b{
   position:absolute;
   left:14px;
   bottom:14px;
-  color:#bbf900;
-  font-family:'Bricolage Grotesque','DM Sans',sans-serif;
-  font-size:13px;
-  font-weight:900;
-  line-height:1;
-  letter-spacing:0.04em;
-  text-transform:uppercase;
   z-index:2;
-  text-shadow:0 2px 6px rgba(0,0,0,0.8);
+  color:var(--neon);
+  font-family:'Bricolage Grotesque','DM Sans',sans-serif;
+  font-size:15px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  text-shadow:0 2px 4px rgba(0,0,0,.9);
 }
-.formats-note{color:#c9c2ea;font-size:14px;max-width:60ch;margin-top:14px}
+.formats-note{color:#c9c2ea;font-size:14px;max-width:60ch;margin-top:10px}
 
-/* Conteúdo */
 .mods{
   list-style:none;
   counter-reset:mod;
@@ -330,7 +256,6 @@ section{padding:76px 0}
 .bonus h3{font-size:18px;margin-bottom:8px}
 .bonus p{font-size:14.5px;color:var(--muted)}
 
-/* Oferta */
 .offer{background:var(--white)}
 .offer-panel{
   display:grid;
@@ -370,21 +295,13 @@ section{padding:76px 0}
 .offer-buy .fine{font-size:13px;color:#d9d0ff;margin-top:6px}
 .offer-buy .btn{margin-top:14px}
 
-/* Antes de comprar */
 .careful{background:var(--ink);color:#fff}
 .careful .section-title{max-width:22ch}
-.careful ol{
-  list-style:none;
-  max-width:760px;
-}
-.careful li{
-  padding:20px 0;
-  border-top:1px solid #4b4278;
-}
+.careful ol{list-style:none;max-width:760px}
+.careful li{padding:20px 0;border-top:1px solid #4b4278}
 .careful li strong{display:block;font-size:18px;margin-bottom:4px}
 .careful li span{color:#c9c2ea;font-size:15.5px}
 
-/* FAQ */
 .faq{max-width:780px}
 details{border-top:2px solid var(--ink)}
 details:last-of-type{border-bottom:2px solid var(--ink)}
@@ -407,12 +324,10 @@ summary:after{
 details[open] summary:after{transform:translateY(-50%) rotate(45deg)}
 details p{padding:0 0 20px;color:var(--muted);max-width:64ch}
 
-/* Final */
 .final{background:var(--violet);color:#fff;text-align:center}
 .final h2{font-size:clamp(30px,5vw,48px);font-weight:800;margin:0 auto 14px;max-width:18ch}
 .final p{color:#e8e2ff;max-width:52ch;margin:0 auto 28px}
 
-/* Rodapé */
 footer{
   background:var(--ink);
   color:#bdb5e0;
@@ -421,401 +336,7 @@ footer{
 }
 footer p{max-width:78ch;margin-bottom:10px}
 
-/* Barra fixa no celular */
 .sticky{display:none}
 
 @media (max-width:860px){
-  .hero{padding:40px 0 64px}
-  .hero-grid{grid-template-columns:1fr}
-  .strip{order:-1;margin-bottom:14px}
-  .vsl{order:-1;margin-bottom:6px}
-  .frame{width:min(26vw,120px)}
-  .facts{grid-template-columns:1fr;gap:26px}
-  .facts div,.facts div:first-child{padding:0 0 0 18px;border-left:3px solid var(--ink)}
-  .learn-list,.mods{grid-template-columns:1fr}
-  .bonus{grid-template-columns:1fr 1fr}
-  .offer-panel{grid-template-columns:1fr}
-  section{padding:58px 0}
-}
-@media (max-width:720px){
-  .sticky{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:12px;
-    position:fixed;
-    left:0;right:0;bottom:0;
-    z-index:50;
-    background:var(--ink);
-    color:#fff;
-    padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));
-    transition:transform .25s ease;
-  }
-  html.js .sticky{transform:translateY(120%)}
-  html.js .sticky.on{transform:none}
-  .sticky strong{display:block;font-size:16px;line-height:1.2}
-  .sticky span{font-size:12px;color:#c9c2ea}
-  .sticky .btn{font-size:15px;padding:12px 20px;box-shadow:0 4px 0 var(--sun-deep)}
-  footer{padding-bottom:96px}
-  .hero-actions .btn{width:100%}
-}
-@media (max-width:520px){
-  .bonus{grid-template-columns:1fr}
-  .offer-incl,.offer-buy{padding:26px 22px}
-}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .frame{animation:none}
-  .btn,.sticky,summary:after{transition:none}
-}
-</style>
-</head>
-<body>
-
-<div class="notice">Página informativa de afiliado. O pagamento é feito no checkout do produtor.</div>
-
-<header class="hero on-dark">
-  <div class="wrap hero-grid">
-    <div>
-      <h1>Aprenda a criar um influenciador virtual com IA e fazer vídeos sem aparecer</h1>
-      <p class="lead">
-        A IA Academy é um curso online em aulas curtas, com modelos de vídeo e agentes de GPT, para quem quer
-        divulgar produtos como afiliado no TikTok Shop usando só o celular.
-      </p>
-      <div class="hero-actions">
-        <a class="btn" id="cta-hero" href="https://pay.cakto.com.br/vtw4ozj_670334?affiliate=E3XwV9eT" rel="sponsored noopener">Ver a oferta no checkout</a>
-        <a class="link" href="#conteudo">Ver o que está incluso</a>
-      </div>
-      <p class="price-note">
-        Oferta divulgada pelo produtor em 14/10/2026: R$ 97 à vista no Pix ou 12x de R$ 10,43.
-        Confirme o valor final na página de pagamento.
-      </p>
-    </div>
-
-    <figure class="vsl">
-      <div class="screen">
-        <video controls playsinline preload="metadata" poster="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=720&q=80">
-          <source src="vsl.mp4" type="video/mp4">
-          Seu navegador não consegue reproduzir este vídeo.
-        </video>
-      </div>
-      <figcaption>
-        Vídeo de apresentação do produtor, com exemplos de influenciadores criados com IA. As afirmações feitas no
-        vídeo são do produtor e não garantem resultado.
-      </figcaption>
-    </figure>
-  </div>
-</header>
-
-<main>
-
-<section class="about">
-  <div class="wrap">
-    <h2 class="section-title">O que é a IA Academy</h2>
-    <p>
-      É um curso online criado por Igor Henrique. Segundo a página oficial do produtor, ele ensina a montar um
-      avatar com inteligência artificial, gerar vídeos com esse avatar e usar esses vídeos para divulgar produtos
-      que já existem no TikTok Shop.
-    </p>
-    <p>
-      Nesta página você vê, de forma resumida, o que o curso inclui e quais cuidados tomar antes de comprar. Os
-      detalhes completos ficam no checkout e na página do produtor.
-    </p>
-
-    <div class="facts">
-      <div>
-        <h3>Sem mostrar o rosto</h3>
-        <p>Nos vídeos aparece um avatar criado com IA, e não você.</p>
-      </div>
-      <div>
-        <h3>Só com o celular</h3>
-        <p>O produtor diz que não é preciso câmera profissional, estúdio ou computador potente.</p>
-      </div>
-      <div>
-        <h3>Sem produto em mãos</h3>
-        <p>Você divulga produtos que já estão à venda no TikTok Shop e recebe comissão quando há venda.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="learn">
-  <div class="wrap">
-    <h2 class="section-title">O que você aprende</h2>
-    <p class="section-sub">Os pontos abaixo seguem a descrição do produtor.</p>
-    <ul class="learn-list">
-      <li><strong>Fundamentos de IA na prática</strong><span>Quais ferramentas abrir, para que cada uma serve e onde ela entra no processo.</span></li>
-      <li><strong>Avatar consistente</strong><span>Como manter o mesmo rosto em cenários diferentes, sem mudar de pessoa a cada vídeo.</span></li>
-      <li><strong>Oito formatos de vídeo</strong><span>UGC, dancinha, manequim, POV e outros, com o prompt de cada formato.</span></li>
-      <li><strong>Escolha do produto</strong><span>Como escolher o que já está vendendo no TikTok Shop e como pedir amostra.</span></li>
-      <li><strong>Rotina de 30 minutos</strong><span>Um passo a passo diário para postar com constância.</span></li>
-      <li><strong>Comunidade</strong><span>Um espaço para tirar dúvidas e ver o que funcionou para outros alunos.</span></li>
-      <li><strong>Aulas curtas</strong><span>Conteúdo direto ao ponto, sem aulas longas.</span></li>
-      <li><strong>Atualizações</strong><span>O produtor informa que as aulas são refeitas quando as ferramentas mudam.</span></li>
-    </ul>
-  </div>
-</section>
-
-<!-- Seção Oito Formatos com Imagens Realistas -->
-<section class="formats on-dark">
-  <div class="wrap">
-    <h2 class="section-title">Oito formatos de vídeo para testar</h2>
-    <p class="section-sub">Estes são os formatos que estão rodando agora. Você troca o produto, gera o vídeo e posta — sem gravar nada.</p>
-  </div>
-  <div class="wrap">
-    <div class="reel" role="list">
-      
-      <!-- 1. UGC -->
-      <div class="tile" role="listitem">
-        <img class="tile-bg" src="watermarked_img_10981019336006437426.jpg" alt="Formato UGC influenciadora com produto e microfone" loading="lazy">
-        <div class="tile-overlay"></div>
-        <b>UGC</b>
-      </div>
-
-      <!-- 2. Dancinha -->
-      <div class="tile" role="listitem">
-        <img class="tile-bg" src="watermarked_img_761302553881977307.jpg" alt="Formato Dancinha criadora em sacada à noite" loading="lazy">
-        <div class="tile-overlay"></div>
-        <b>Dancinha</b>
-      </div>
-
-      <!-- 3. Movimento -->
-      <div class="tile" role="listitem">
-        <img class="tile-bg" src="watermarked_img_9450602059375934535.jpg" alt="Formato Movimento modelo em vestido azul" loading="lazy">
-        <div class="tile-overlay"></div>
-        <b>Movimento</b>
-      </div>
-
-      <!-- 4. POV -->
-      <div class="tile" role="listitem">
-        <img class="tile-bg" src="watermarked_img_11912738558414175927.jpg" alt="Formato POV mãos desembalando peça e produto" loading="lazy">
-        <div class="tile-overlay"></div>
-        <b>POV</b>
-      </div>
-
-      <!-- 5. Manequim -->
-      <div class="tile" role="listitem">
-        <img class="tile-bg" src="watermarked_img_14630333743146948202.jpg" alt="Formato Manequim mostruário de roupa em close" loading="lazy">
-        <div class="tile-overlay"></div>
-        <b>Manequim</b>
-      </div>
-
-      <!-- 6. Fábrica -->
-      <div class="tile" role="listitem">
-        <img class="tile-bg" src="watermarked_img_1072237384701446460.jpg" alt="Formato Fábrica linha de embalagem de cosméticos" loading="lazy">
-        <div class="tile-overlay"></div>
-        <b>Fábrica</b>
-      </div>
-
-      <!-- 7. Boneco -->
-      <div class="tile" role="listitem">
-        <img class="tile-bg" src="watermarked_img_15660069192126771083.jpg" alt="Formato Boneco miniatura realista segurando produto" loading="lazy">
-        <div class="tile-overlay"></div>
-        <b>Boneco</b>
-      </div>
-
-      <!-- 8. Outros -->
-      <div class="tile" role="listitem">
-        <img class="tile-bg" src="watermarked_img_18273143835424801295.jpg" alt="Formato Estúdio e setup de gravação profissional" loading="lazy">
-        <div class="tile-overlay"></div>
-        <b>Outros</b>
-      </div>
-
-    </div>
-    <p class="formats-note">Imagens ilustrativas. Os modelos reais e prompts prontos ficam na área de membros do curso.</p>
-  </div>
-</section>
-
-<section id="conteudo">
-  <div class="wrap">
-    <h2 class="section-title">Módulos e bônus</h2>
-    <p class="section-sub">O produtor lista sete módulos e quatro bônus.</p>
-
-    <ol class="mods">
-      <li>Comece por aqui</li>
-      <li>Criando seu Influencer IA</li>
-      <li>Roteiro do zero, na ordem certa</li>
-      <li>Gerando conteúdos com IA</li>
-      <li>Equipe de agentes GPT</li>
-      <li>Caixa preta dos prompts</li>
-      <li>Seja um sócio</li>
-    </ol>
-
-    <h3 class="bonus-title">Bônus incluídos</h3>
-    <div class="bonus">
-      <div>
-        <h3>Equipe de agentes GPT</h3>
-        <p>Agentes para ajudar a achar produto, escrever o roteiro e organizar as postagens.</p>
-      </div>
-      <div>
-        <h3>Formatos virais validados</h3>
-        <p>Modelos prontos para colar, com rosto consistente, cenário e produto na mão.</p>
-      </div>
-      <div>
-        <h3>Mineração de produtos com IA</h3>
-        <p>Como descobrir o que já está vendendo no TikTok Shop antes de saturar.</p>
-      </div>
-      <div>
-        <h3>Passo a passo do zero</h3>
-        <p>As etapas na ordem certa, a partir de um perfil recém-criado.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="offer">
-  <div class="wrap">
-    <div class="offer-panel">
-      <div class="offer-incl">
-        <h2>O que está incluso</h2>
-        <ul>
-          <li>IA Academy, o método completo</li>
-          <li>Equipe de agentes GPT</li>
-          <li>Formatos virais validados</li>
-          <li>Mineração de produtos virais com IA</li>
-          <li>Passo a passo do zero</li>
-          <li>Acesso liberado após a aprovação do pagamento</li>
-          <li>Garantia de 7 dias, segundo o produtor</li>
-        </ul>
-      </div>
-      <div class="offer-buy on-dark">
-        <div class="big">R$ 97</div>
-        <div class="alt">à vista no Pix, ou 12x de R$ 10,43</div>
-        <a class="btn" href="https://pay.cakto.com.br/vtw4ozj_670334?affiliate=E3XwV9eT" rel="sponsored noopener">Ir para o checkout</a>
-        <div class="fine">Valores divulgados pelo produtor em 14/10/2026. Podem mudar a qualquer momento.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="careful on-dark">
-  <div class="wrap">
-    <h2 class="section-title">Antes de comprar</h2>
-    <ol>
-      <li>
-        <strong>Nenhum resultado é garantido</strong>
-        <span>Quanto você ganha, ou se ganha, depende da sua dedicação, dos produtos que escolher, da concorrência e das regras do TikTok Shop.</span>
-      </li>
-      <li>
-        <strong>Leia as regras da plataforma</strong>
-        <span>O TikTok Shop pode ter exigências sobre conteúdo criado com IA e sobre afiliados. Confira as regras vigentes antes de postar.</span>
-      </li>
-      <li>
-        <strong>As informações vêm do produtor</strong>
-        <span>Descrevemos o conteúdo conforme a página oficial. Valores, bônus e condições podem mudar.</span>
-      </li>
-      <li>
-        <strong>Compra, acesso e reembolso são com o produtor</strong>
-        <span>O pagamento é feito no checkout, e o acesso, o suporte e a garantia seguem as regras do produtor e da plataforma de pagamento.</span>
-      </li>
-      <li>
-        <strong>Sobre o vídeo desta página</strong>
-        <span>É material de divulgação do produtor. O que é dito nele é opinião e promessa do produtor, e não significa que você terá o mesmo resultado.</span>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2 class="section-title">Perguntas frequentes</h2>
-    <div class="faq">
-      <details>
-        <summary>Preciso saber usar IA?</summary>
-        <p>Segundo o produtor, as aulas começam do zero e mostram qual ferramenta abrir, o que digitar e o que fazer com o vídeo pronto.</p>
-      </details>
-      <details>
-        <summary>Preciso aparecer nos vídeos?</summary>
-        <p>Não. O método usa um avatar gerado por IA no lugar do seu rosto.</p>
-      </details>
-      <details>
-        <summary>Preciso ter um produto para vender?</summary>
-        <p>O método trabalha com produtos que já existem no TikTok Shop. Você divulga e recebe comissão quando há venda, conforme as regras da plataforma.</p>
-      </details>
-      <details>
-        <summary>Quanto tempo por dia eu preciso?</summary>
-        <p>O produtor indica uma rotina de cerca de 30 minutos por dia.</p>
-      </details>
-      <details>
-        <summary>Como recebo o acesso?</summary>
-        <p>Depois da aprovação do pagamento, o acesso é liberado na área de membros, com o mesmo e-mail usado na compra.</p>
-      </details>
-      <details>
-        <summary>E se eu não gostar?</summary>
-        <p>O produtor oferece 7 dias de garantia, com pedido de reembolso dentro desse prazo.</p>
-      </details>
-      <details>
-        <summary>Esta página é do produtor?</summary>
-        <p>Não. É uma página informativa de afiliado. Se você comprar pelos botões, o responsável pela página pode receber uma comissão, sem custo adicional para você.</p>
-      </details>
-      <details>
-        <summary>Vou ganhar dinheiro com isso?</summary>
-        <p>Ninguém pode garantir. O curso é um material de aprendizado, e os resultados variam de pessoa para pessoa.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<section class="final on-dark">
-  <div class="wrap">
-    <h2>Quer ver a oferta completa?</h2>
-    <p>O checkout mostra o valor final, as formas de pagamento e as condições de garantia.</p>
-    <a class="btn" id="cta-final" href="https://pay.cakto.com.br/vtw4ozj_670334?affiliate=E3XwV9eT" rel="sponsored noopener">Ir para o checkout</a>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="wrap">
-    <p>
-      Página informativa de afiliado, sem vínculo oficial com o produtor, com a Cakto, com o TikTok, com a Meta ou
-      com o Google. Se você comprar pelos botões desta página, o responsável por ela pode receber uma comissão, sem
-      custo adicional para você.
-    </p>
-    <p>
-      IA Academy e os demais nomes citados são marcas de seus respectivos titulares. As informações sobre o curso
-      foram organizadas a partir da página do produtor e podem mudar. Os resultados dependem de cada pessoa e não
-      são garantidos. O vídeo de apresentação é material de divulgação do produtor.
-    </p>
-  </div>
-</footer>
-
-<div class="sticky" id="sticky">
-  <div>
-    <strong>R$ 97 no Pix</strong>
-    <span>ou 12x de R$ 10,43</span>
-  </div>
-  <a class="btn" href="https://pay.cakto.com.br/vtw4ozj_670334?affiliate=E3XwV9eT" rel="sponsored noopener">Ir ao checkout</a>
-</div>
-
-<script>
-// Barra fixa do celular: aparece depois que o botão do topo sai da tela
-(function () {
-  var bar = document.getElementById('sticky');
-  var alvo = document.getElementById('cta-hero');
-  var fim = document.getElementById('cta-final');
-  if (!bar || !alvo || !('IntersectionObserver' in window)) {
-    if (bar) bar.classList.add('on');
-    return;
-  }
-  var topoVisivel = true;
-  var fimVisivel = false;
-  function atualizar() {
-    bar.classList.toggle('on', !topoVisivel && !fimVisivel);
-  }
-  new IntersectionObserver(function (e) {
-    topoVisivel = e[0].isIntersecting || e[0].boundingClientRect.top > 0;
-    atualizar();
-  }).observe(alvo);
-  if (fim) {
-    new IntersectionObserver(function (e) {
-      fimVisivel = e[0].isIntersecting;
-      atualizar();
-    }).observe(fim);
-  }
-})();
-</script>
-
-</body>
-</html>
+  .hero{padding:40px 0 64
