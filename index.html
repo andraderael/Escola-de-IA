@@ -109,7 +109,7 @@ a:focus-visible,summary:focus-visible,.btn:focus-visible{outline:3px solid var(-
   max-width:52ch;
 }
 
-/* Quadros verticais do hero */
+/* Quadros verticais do hero com fotos realistas */
 .strip{
   display:flex;
   justify-content:center;
@@ -126,36 +126,45 @@ a:focus-visible,summary:focus-visible,.btn:focus-visible{outline:3px solid var(-
   border:3px solid var(--ink);
   box-shadow:0 14px 0 rgba(21,16,48,.25);
   animation:rise .7s cubic-bezier(.2,.8,.2,1) both;
+  background:#1e1845;
 }
 .frame.f2{margin-top:36px;animation-delay:.12s}
 .frame.f3{animation-delay:.24s}
-.f1{background:linear-gradient(165deg,#ffc83d,#ff5f8d)}
-.f2{background:linear-gradient(165deg,#2bd9a8,#5b2eff)}
-.f3{background:linear-gradient(165deg,#ff5f8d,#241a52)}
-.frame .head{
-  position:absolute;left:50%;top:32%;
-  width:34%;aspect-ratio:1;
-  transform:translateX(-50%);
-  border-radius:50%;
-  background:rgba(255,255,255,.92);
+
+.frame img.frame-bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .3s ease;
 }
-.frame .body{
-  position:absolute;left:50%;top:57%;
-  width:64%;height:52%;
-  transform:translateX(-50%);
-  border-radius:50% 50% 0 0;
-  background:rgba(255,255,255,.92);
+.frame:hover img.frame-bg{
+  transform:scale(1.05);
+}
+.frame .overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(21,16,48,0.2) 0%, rgba(21,16,48,0.7) 100%);
+  z-index:1;
 }
 .frame .rec{
-  position:absolute;top:10px;right:10px;
-  width:9px;height:9px;border-radius:50%;
+  position:absolute;top:12px;right:12px;
+  width:10px;height:10px;border-radius:50%;
   background:#ff3b5c;
+  box-shadow:0 0 8px rgba(255,59,92,0.8);
+  z-index:2;
 }
 .frame .tag{
   position:absolute;left:10px;bottom:10px;
-  background:var(--ink);color:#fff;
-  font-size:12px;font-weight:700;line-height:1;
-  padding:7px 10px;border-radius:999px;
+  background:rgba(21,16,48,0.85);
+  backdrop-filter:blur(6px);
+  color:#fff;
+  font-size:11px;font-weight:700;line-height:1;
+  padding:6px 10px;border-radius:999px;
+  border:1px solid rgba(255,255,255,0.2);
+  z-index:2;
 }
 @keyframes rise{
   from{transform:translateY(46px);opacity:0}
@@ -213,7 +222,7 @@ section{padding:76px 0}
 .learn-list strong{display:block;font-size:18px;margin-bottom:4px}
 .learn-list span{color:var(--muted);font-size:15px}
 
-/* Formatos */
+/* Formatos & Carrossel */
 .formats{background:var(--ink);color:#fff}
 .formats .section-sub{color:#c9c2ea}
 .reel{
@@ -226,35 +235,85 @@ section{padding:76px 0}
 }
 .tile{
   position:relative;
-  flex:0 0 150px;
+  flex:0 0 170px;
   aspect-ratio:9/16;
   border-radius:20px;
-  border:3px solid #fff;
+  border:3px solid rgba(255,255,255,0.9);
   scroll-snap-align:start;
   overflow:hidden;
+  background:#1a143b;
+  cursor:pointer;
+  transition:transform .2s ease, box-shadow .2s ease;
 }
-.tile:nth-child(1){background:linear-gradient(165deg,#ffc83d,#ff5f8d)}
-.tile:nth-child(2){background:linear-gradient(165deg,#ff5f8d,#5b2eff)}
-.tile:nth-child(3){background:linear-gradient(165deg,#2bd9a8,#3f1fc7)}
-.tile:nth-child(4){background:linear-gradient(165deg,#5b2eff,#151030)}
-.tile:nth-child(5){background:linear-gradient(165deg,#ffc83d,#2bd9a8)}
-.tile:nth-child(6){background:linear-gradient(165deg,#ff5f8d,#ffc83d)}
-.tile:nth-child(7){background:linear-gradient(165deg,#3f1fc7,#2bd9a8)}
-.tile:nth-child(8){background:linear-gradient(165deg,#241a52,#ff5f8d)}
+.tile:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.5);
+}
+.tile img.tile-bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .3s ease;
+}
+.tile:hover img.tile-bg{
+  transform:scale(1.08);
+}
+.tile .tile-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(21,16,48,0.1) 0%, rgba(21,16,48,0.4) 50%, rgba(21,16,48,0.85) 100%);
+  z-index:1;
+}
 .tile .play{
-  position:absolute;left:50%;top:44%;
-  width:38px;height:38px;
+  position:absolute;
+  left:50%;
+  top:44%;
+  width:42px;
+  height:42px;
   transform:translate(-50%,-50%);
+  background:rgba(255,255,255,0.85);
+  backdrop-filter:blur(8px);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:2;
+  box-shadow:0 4px 12px rgba(0,0,0,0.35);
+  transition:background .2s ease, transform .2s ease;
+}
+.tile .play:after{
+  content:"";
+  display:block;
+  width:0;
+  height:0;
+  border-style:solid;
+  border-width:7px 0 7px 12px;
+  border-color:transparent transparent transparent var(--ink);
+  margin-left:3px;
+}
+.tile:hover .play{
   background:#fff;
-  clip-path:polygon(25% 14%,92% 50%,25% 86%);
+  transform:translate(-50%,-50%) scale(1.1);
 }
 .tile b{
-  position:absolute;left:10px;bottom:10px;
-  background:var(--ink);color:#fff;
-  font-size:13px;line-height:1;
-  padding:8px 11px;border-radius:999px;
+  position:absolute;
+  left:10px;
+  bottom:10px;
+  background:rgba(21,16,48,0.85);
+  backdrop-filter:blur(6px);
+  color:#fff;
+  font-size:13px;
+  line-height:1;
+  padding:7px 12px;
+  border-radius:999px;
+  z-index:2;
+  border:1px solid rgba(255,255,255,0.2);
+  letter-spacing:0.01em;
 }
-.formats-note{color:#c9c2ea;font-size:14px;max-width:60ch}
+.formats-note{color:#c9c2ea;font-size:14px;max-width:60ch;margin-top:14px}
 
 /* Conteúdo */
 .mods{
@@ -462,7 +521,7 @@ footer p{max-width:78ch;margin-bottom:10px}
 
     <figure class="vsl">
       <div class="screen">
-        <video controls playsinline preload="metadata" poster="vsl-poster.jpg">
+        <video controls playsinline preload="metadata" poster="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=720&q=80">
           <source src="vsl.mp4" type="video/mp4">
           Seu navegador não consegue reproduzir este vídeo.
         </video>
@@ -524,6 +583,7 @@ footer p{max-width:78ch;margin-bottom:10px}
   </div>
 </section>
 
+<!-- Seção Oito Formatos com Imagens Realistas -->
 <section class="formats on-dark">
   <div class="wrap">
     <h2 class="section-title">Oito formatos de vídeo para testar</h2>
@@ -531,14 +591,71 @@ footer p{max-width:78ch;margin-bottom:10px}
   </div>
   <div class="wrap">
     <div class="reel" role="list">
-      <div class="tile" role="listitem"><span class="play"></span><b>UGC</b></div>
-      <div class="tile" role="listitem"><span class="play"></span><b>Dancinha</b></div>
-      <div class="tile" role="listitem"><span class="play"></span><b>Movimento</b></div>
-      <div class="tile" role="listitem"><span class="play"></span><b>POV</b></div>
-      <div class="tile" role="listitem"><span class="play"></span><b>Manequim</b></div>
-      <div class="tile" role="listitem"><span class="play"></span><b>Fábrica</b></div>
-      <div class="tile" role="listitem"><span class="play"></span><b>Boneco</b></div>
-      <div class="tile" role="listitem"><span class="play"></span><b>Outros</b></div>
+      
+      <!-- 1. UGC -->
+      <div class="tile" role="listitem">
+        <img class="tile-bg" src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80" alt="Formato UGC com criador e cosmético" loading="lazy" onerror="this.src='https://placehold.co/360x640/241a52/ffffff?text=UGC'">
+        <div class="tile-overlay"></div>
+        <span class="play"></span>
+        <b>UGC</b>
+      </div>
+
+      <!-- 2. Dancinha -->
+      <div class="tile" role="listitem">
+        <img class="tile-bg" src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80" alt="Formato Dancinha em quarto com iluminação LED" loading="lazy" onerror="this.src='https://placehold.co/360x640/241a52/ffffff?text=Dancinha'">
+        <div class="tile-overlay"></div>
+        <span class="play"></span>
+        <b>Dancinha</b>
+      </div>
+
+      <!-- 3. Movimento -->
+      <div class="tile" role="listitem">
+        <img class="tile-bg" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" alt="Formato Movimento e vlog dinâmico na rua" loading="lazy" onerror="this.src='https://placehold.co/360x640/241a52/ffffff?text=Movimento'">
+        <div class="tile-overlay"></div>
+        <span class="play"></span>
+        <b>Movimento</b>
+      </div>
+
+      <!-- 4. POV -->
+      <div class="tile" role="listitem">
+        <img class="tile-bg" src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=600&q=80" alt="Formato POV em primeira pessoa com gadget ou produto" loading="lazy" onerror="this.src='https://placehold.co/360x640/241a52/ffffff?text=POV'">
+        <div class="tile-overlay"></div>
+        <span class="play"></span>
+        <b>POV</b>
+      </div>
+
+      <!-- 5. Manequim -->
+      <div class="tile" role="listitem">
+        <img class="tile-bg" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Formato Manequim modelo masculino em ambiente urbano" loading="lazy" onerror="this.src='https://placehold.co/360x640/241a52/ffffff?text=Manequim'">
+        <div class="tile-overlay"></div>
+        <span class="play"></span>
+        <b>Manequim</b>
+      </div>
+
+      <!-- 6. Fábrica -->
+      <div class="tile" role="listitem">
+        <img class="tile-bg" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Formato Fábrica linha de montagem e produção" loading="lazy" onerror="this.src='https://placehold.co/360x640/241a52/ffffff?text=Fábrica'">
+        <div class="tile-overlay"></div>
+        <span class="play"></span>
+        <b>Fábrica</b>
+      </div>
+
+      <!-- 7. Boneco -->
+      <div class="tile" role="listitem">
+        <img class="tile-bg" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="Formato Boneco avatar digital 3D" loading="lazy" onerror="this.src='https://placehold.co/360x640/241a52/ffffff?text=Boneco'">
+        <div class="tile-overlay"></div>
+        <span class="play"></span>
+        <b>Boneco</b>
+      </div>
+
+      <!-- 8. Outros -->
+      <div class="tile" role="listitem">
+        <img class="tile-bg" src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&w=600&q=80" alt="Formato de estúdio ring light e gravação" loading="lazy" onerror="this.src='https://placehold.co/360x640/241a52/ffffff?text=Outros'">
+        <div class="tile-overlay"></div>
+        <span class="play"></span>
+        <b>Outros</b>
+      </div>
+
     </div>
     <p class="formats-note">Imagens ilustrativas. Os vídeos reais ficam na área de membros do curso.</p>
   </div>
