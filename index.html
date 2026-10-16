@@ -229,25 +229,29 @@ section{padding:76px 0}
   display:flex;
   gap:16px;
   overflow-x:auto;
-  padding:6px 20px 22px;
+  padding:10px 20px 26px;
   margin:0 -20px;
   scroll-snap-type:x proximity;
+  -webkit-overflow-scrolling:touch;
 }
+.reel::-webkit-scrollbar{height:6px}
+.reel::-webkit-scrollbar-track{background:rgba(255,255,255,0.05);border-radius:10px}
+.reel::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.2);border-radius:10px}
+
 .tile{
   position:relative;
-  flex:0 0 170px;
+  flex:0 0 190px;
   aspect-ratio:9/16;
-  border-radius:20px;
-  border:3px solid rgba(255,255,255,0.9);
+  border-radius:24px;
   scroll-snap-align:start;
   overflow:hidden;
-  background:#1a143b;
-  cursor:pointer;
-  transition:transform .2s ease, box-shadow .2s ease;
+  background:#130e2b;
+  box-shadow:0 12px 28px rgba(0,0,0,0.45);
+  transition:transform .22s ease, box-shadow .22s ease;
 }
 .tile:hover{
-  transform:translateY(-4px);
-  box-shadow:0 10px 20px rgba(0,0,0,0.5);
+  transform:translateY(-5px) scale(1.02);
+  box-shadow:0 18px 36px rgba(0,0,0,0.6);
 }
 .tile img.tile-bg{
   position:absolute;
@@ -256,62 +260,31 @@ section{padding:76px 0}
   height:100%;
   object-fit:cover;
   display:block;
-  transition:transform .3s ease;
+  transition:transform .35s ease;
 }
 .tile:hover img.tile-bg{
-  transform:scale(1.08);
+  transform:scale(1.06);
 }
 .tile .tile-overlay{
   position:absolute;
   inset:0;
-  background:linear-gradient(180deg, rgba(21,16,48,0.1) 0%, rgba(21,16,48,0.4) 50%, rgba(21,16,48,0.85) 100%);
+  background:linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.3) 72%, rgba(0,0,0,0.85) 100%);
   z-index:1;
-}
-.tile .play{
-  position:absolute;
-  left:50%;
-  top:44%;
-  width:42px;
-  height:42px;
-  transform:translate(-50%,-50%);
-  background:rgba(255,255,255,0.85);
-  backdrop-filter:blur(8px);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:2;
-  box-shadow:0 4px 12px rgba(0,0,0,0.35);
-  transition:background .2s ease, transform .2s ease;
-}
-.tile .play:after{
-  content:"";
-  display:block;
-  width:0;
-  height:0;
-  border-style:solid;
-  border-width:7px 0 7px 12px;
-  border-color:transparent transparent transparent var(--ink);
-  margin-left:3px;
-}
-.tile:hover .play{
-  background:#fff;
-  transform:translate(-50%,-50%) scale(1.1);
+  pointer-events:none;
 }
 .tile b{
   position:absolute;
-  left:10px;
-  bottom:10px;
-  background:rgba(21,16,48,0.85);
-  backdrop-filter:blur(6px);
-  color:#fff;
+  left:14px;
+  bottom:14px;
+  color:#bbf900;
+  font-family:'Bricolage Grotesque','DM Sans',sans-serif;
   font-size:13px;
+  font-weight:900;
   line-height:1;
-  padding:7px 12px;
-  border-radius:999px;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
   z-index:2;
-  border:1px solid rgba(255,255,255,0.2);
-  letter-spacing:0.01em;
+  text-shadow:0 2px 6px rgba(0,0,0,0.8);
 }
 .formats-note{color:#c9c2ea;font-size:14px;max-width:60ch;margin-top:14px}
 
@@ -587,77 +560,69 @@ footer p{max-width:78ch;margin-bottom:10px}
 <section class="formats on-dark">
   <div class="wrap">
     <h2 class="section-title">Oito formatos de vídeo para testar</h2>
-    <p class="section-sub">Cada formato vem com prompts prontos, segundo o produtor. Você troca o produto e gera o vídeo.</p>
+    <p class="section-sub">Estes são os formatos que estão rodando agora. Você troca o produto, gera o vídeo e posta — sem gravar nada.</p>
   </div>
   <div class="wrap">
     <div class="reel" role="list">
       
       <!-- 1. UGC -->
       <div class="tile" role="listitem">
-        <img class="tile-bg" src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80" alt="Formato UGC com criador e cosmético" loading="lazy" onerror="this.src='https://placehold.co/360x640/241a52/ffffff?text=UGC'">
+        <img class="tile-bg" src="watermarked_img_10981019336006437426.jpg" alt="Formato UGC influenciadora com produto e microfone" loading="lazy">
         <div class="tile-overlay"></div>
-        <span class="play"></span>
         <b>UGC</b>
       </div>
 
       <!-- 2. Dancinha -->
       <div class="tile" role="listitem">
-        <img class="tile-bg" src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80" alt="Formato Dancinha em quarto com iluminação LED" loading="lazy" onerror="this.src='https://placehold.co/360x640/241a52/ffffff?text=Dancinha'">
+        <img class="tile-bg" src="watermarked_img_761302553881977307.jpg" alt="Formato Dancinha criadora em sacada à noite" loading="lazy">
         <div class="tile-overlay"></div>
-        <span class="play"></span>
         <b>Dancinha</b>
       </div>
 
       <!-- 3. Movimento -->
       <div class="tile" role="listitem">
-        <img class="tile-bg" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" alt="Formato Movimento e vlog dinâmico na rua" loading="lazy" onerror="this.src='https://placehold.co/360x640/241a52/ffffff?text=Movimento'">
+        <img class="tile-bg" src="watermarked_img_9450602059375934535.jpg" alt="Formato Movimento modelo em vestido azul" loading="lazy">
         <div class="tile-overlay"></div>
-        <span class="play"></span>
         <b>Movimento</b>
       </div>
 
       <!-- 4. POV -->
       <div class="tile" role="listitem">
-        <img class="tile-bg" src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=600&q=80" alt="Formato POV em primeira pessoa com gadget ou produto" loading="lazy" onerror="this.src='https://placehold.co/360x640/241a52/ffffff?text=POV'">
+        <img class="tile-bg" src="watermarked_img_11912738558414175927.jpg" alt="Formato POV mãos desembalando peça e produto" loading="lazy">
         <div class="tile-overlay"></div>
-        <span class="play"></span>
         <b>POV</b>
       </div>
 
       <!-- 5. Manequim -->
       <div class="tile" role="listitem">
-        <img class="tile-bg" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Formato Manequim modelo masculino em ambiente urbano" loading="lazy" onerror="this.src='https://placehold.co/360x640/241a52/ffffff?text=Manequim'">
+        <img class="tile-bg" src="watermarked_img_14630333743146948202.jpg" alt="Formato Manequim mostruário de roupa em close" loading="lazy">
         <div class="tile-overlay"></div>
-        <span class="play"></span>
         <b>Manequim</b>
       </div>
 
       <!-- 6. Fábrica -->
       <div class="tile" role="listitem">
-        <img class="tile-bg" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Formato Fábrica linha de montagem e produção" loading="lazy" onerror="this.src='https://placehold.co/360x640/241a52/ffffff?text=Fábrica'">
+        <img class="tile-bg" src="watermarked_img_1072237384701446460.jpg" alt="Formato Fábrica linha de embalagem de cosméticos" loading="lazy">
         <div class="tile-overlay"></div>
-        <span class="play"></span>
         <b>Fábrica</b>
       </div>
 
       <!-- 7. Boneco -->
       <div class="tile" role="listitem">
-        <img class="tile-bg" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="Formato Boneco avatar digital 3D" loading="lazy" onerror="this.src='https://placehold.co/360x640/241a52/ffffff?text=Boneco'">
+        <img class="tile-bg" src="watermarked_img_15660069192126771083.jpg" alt="Formato Boneco miniatura realista segurando produto" loading="lazy">
         <div class="tile-overlay"></div>
-        <span class="play"></span>
         <b>Boneco</b>
       </div>
 
       <!-- 8. Outros -->
       <div class="tile" role="listitem">
-        <img class="tile-bg" src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&w=600&q=80" alt="Formato de estúdio ring light e gravação" loading="lazy" onerror="this.src='https://placehold.co/360x640/241a52/ffffff?text=Outros'">
+        <img class="tile-bg" src="watermarked_img_18273143835424801295.jpg" alt="Formato Estúdio e setup de gravação profissional" loading="lazy">
         <div class="tile-overlay"></div>
-        <span class="play"></span>
         <b>Outros</b>
       </div>
 
     </div>
-    <p class="formats-note">Imagens ilustrativas. Os vídeos reais ficam na área de membros do curso.</p>
+    <p class="formats-note">Imagens ilustrativas. Os modelos reais e prompts prontos ficam na área de membros do curso.</p>
   </div>
 </section>
 
